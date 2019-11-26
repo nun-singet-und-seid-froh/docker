@@ -8,4 +8,4 @@ unzip EBGaramond-0.016.zip; \
 mkdir -p $HOME/.fonts; \
 cp EBGaramond-0.016/otf/*.otf $HOME/.fonts/; \
 rm -r EBGaramond-0.016.zip EBGaramond-0.016
-RUN apt -qq purge wget unzip && apt -qq autoremove --purge && apt -qq clean
+RUN apt -qq purge -y wget unzip && apt -qq autoremove -y --purge && apt -qq clean
