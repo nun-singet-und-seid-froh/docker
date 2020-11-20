@@ -8,4 +8,5 @@ unzip EBGaramond-0.016.zip; \
 mkdir -p $HOME/.fonts; \
 cp EBGaramond-0.016/otf/*.otf $HOME/.fonts/; \
 rm -r EBGaramond-0.016.zip EBGaramond-0.016
+RUN DEBIAN_FRONTEND="noninteractive" TZ="UTC" apt -qq --no-install-recommends -y install texlive-xetex
 RUN apt -qq purge -y curl unzip && apt -qq autoremove -y --purge && apt -qq clean
