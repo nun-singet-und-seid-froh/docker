@@ -1,0 +1,3 @@
+FROM nunsingetundseidfroh/garamond
+COPY install-lily.sh ./
+RUN ./install-lily.sh

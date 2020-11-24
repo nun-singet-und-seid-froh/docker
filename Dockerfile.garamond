@@ -1,0 +1,3 @@
+FROM ubuntu
+COPY upgrade.sh install-garamond.sh ./
+RUN ./upgrade.sh && ./install-garamond.sh
