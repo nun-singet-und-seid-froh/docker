@@ -1,6 +1,6 @@
 # lilypond and ebgaramond
 
-This container can be used to build pieces for [nun singet und seid froh](nun-singet-und-seid-froh.info).
+This container can be used to build pieces for [nun singet und seid froh](https://nun-singet-und-seid-froh.info).
 
 ## How to use
 
