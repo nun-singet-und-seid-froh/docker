@@ -32,7 +32,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images:  ${{ env.REGISTRY }}/nunsingetundseidfroh/garamond
+          images:  ${{ env.REGISTRY }}/nun-singet-und-seid-froh/garamond
           tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
       
       - name: Build and push Docker image
@@ -62,7 +62,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images:  ${{ env.REGISTRY }}/nunsingetundseidfroh/lilypond
+          images:  ${{ env.REGISTRY }}/nun-singet-und-seid-froh/lilypond
           tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
       
       - name: Build and push Docker image
@@ -92,7 +92,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images:  ${{ env.REGISTRY }}/nunsingetundseidfroh/xelatex
+          images:  ${{ env.REGISTRY }}/nun-singet-und-seid-froh/xelatex
           tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
       
       - name: Build and push Docker image
