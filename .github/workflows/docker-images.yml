@@ -13,6 +13,9 @@ on:
     tags:
       - v*.*.*
 
+env:
+  REGISTRY: ghcr.io
+
 jobs:
   docker-garamond:
     name: Push Garamond Docker image to Docker Hub
