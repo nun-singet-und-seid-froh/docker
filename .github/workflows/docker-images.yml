@@ -39,7 +39,7 @@ jobs:
           tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
       
       - name: Build and push Docker image
-        uses: docker/build-push-action@v1.9.0
+        uses: docker/build-push-action@v4.0.0
         with:
           context: .
           push: true
@@ -69,7 +69,7 @@ jobs:
           tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
       
       - name: Build and push Docker image
-        uses: docker/build-push-action@v1.9.0
+        uses: docker/build-push-action@v4.0.0
         with:
           context: .
           push: true
@@ -99,7 +99,7 @@ jobs:
           tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
       
       - name: Build and push Docker image
-        uses: docker/build-push-action@v1.9.0
+        uses: docker/build-push-action@v4.0.0
         with:
           context: .
           push: true
