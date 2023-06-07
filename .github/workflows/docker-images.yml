@@ -17,18 +17,6 @@ env:
   REGISTRY: ghcr.io
 
 jobs:
-  dump:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Show default environment variables
-        run: |
-          echo "The job_id is: $GITHUB_JOB"   # reference the default environment variables
-          echo "The id of this action is: $GITHUB_ACTION"   # reference the default environment variables
-          echo "The run id is: $GITHUB_RUN_ID"
-          echo "The GitHub Actor's username is: $GITHUB_ACTOR"
-          echo "GitHub SHA: $GITHUB_SHA"
-          echo "GitHub Ref Type: $GITHUB_REF_TYPE"
-          echo "Github Ref Name: $GITHUB_REF_NAME"
   docker-garamond:
     name: Push Garamond Docker image to Docker Hub
     runs-on: ubuntu-latest
@@ -48,7 +36,10 @@ jobs:
         uses: docker/metadata-action@v4.5.0
         with:
           images:  ${{ env.REGISTRY }}/nun-singet-und-seid-froh/garamond
-          tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
+          tags: |
+            type=semver,pattern={{raw}}
+            type=raw,value=latest,enable={{is_default_branch}}
+
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v4.0.0
@@ -78,7 +69,9 @@ jobs:
         uses: docker/metadata-action@v4.5.0
         with:
           images:  ${{ env.REGISTRY }}/nun-singet-und-seid-froh/lilypond
-          tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
+          tags: |
+            type=semver,pattern={{raw}}
+            type=raw,value=latest,enable={{is_default_branch}}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v4.0.0
@@ -108,7 +101,9 @@ jobs:
         uses: docker/metadata-action@v4.5.0
         with:
           images:  ${{ env.REGISTRY }}/nun-singet-und-seid-froh/xelatex
-          tags: ${{ env.GITHUB_REF_TYPE == 'tag' && env.GITHUB_REF_NAME || 'latest' }}
+          tags: |
+            type=semver,pattern={{raw}}
+            type=raw,value=latest,enable={{is_default_branch}}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v4.0.0
