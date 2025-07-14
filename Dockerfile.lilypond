@@ -1,3 +1,4 @@
-FROM ghcr.io/nun-singet-und-seid-froh/garamond:latest
+ARG REVISION
+FROM ghcr.io/nun-singet-und-seid-froh/garamond:${REVISION}
 COPY install-lily.sh ./
 RUN ./install-lily.sh
