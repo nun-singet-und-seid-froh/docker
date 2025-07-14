@@ -78,7 +78,7 @@ jobs:
         with:
           context: .
           push: true
-          build-args: "REVISION=${{ steps.meta.outputs.tags }}"
+          build-args: "REVISION=${{ steps.meta.outputs.version }}"
           file: Dockerfile.lilypond
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
