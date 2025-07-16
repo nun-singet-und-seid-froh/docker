@@ -1,3 +1,4 @@
-FROM ghcr.io/nun-singet-und-seid-froh/garamond:latest
+ARG REVISION
+FROM ghcr.io/nun-singet-und-seid-froh/garamond:${REVISION}
 COPY install-xelatex.sh ./
 RUN ./install-xelatex.sh

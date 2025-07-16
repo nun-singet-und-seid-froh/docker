@@ -112,5 +112,6 @@ jobs:
           context: .
           push: true
           file: Dockerfile.xelatex
+          build-args: "REVISION=${{ steps.meta.outputs.version }}"
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
